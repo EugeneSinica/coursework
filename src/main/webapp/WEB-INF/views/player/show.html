@@ -5,14 +5,25 @@
     <title>Show</title>
 </head>
 <body>
-<p th:text="${player.getFirstName() + ', ' + player.getAge()}">VALUE</p>
-<p th:text="${'Email: ' + player.getEmail()}">VALUE</p>
+<h4>id: </h4>
 <p th:text="${player.getId()}">VALUE</p>
+<h4>name: </h4>
+<p th:text="${player.getFirstName()}">VALUE</p>
+<h4>surname: </h4>
+<p th:text="${player.getSecondName()}">VALUE</p>
+<h4>date of birth: </h4>
+<p th:text="${player.getDateOfBirth()}">VALUE</p>
+<h4>status: </h4>
+<p th:text="${player.getStatus()}">VALUE</p>
+<h4>health status: </h4>
+<p th:text="${player.getHealthStatus()}">VALUE</p>
+<h4>salary: </h4>
+<p th:text="${player.getSalary()}">VALUE</p>
 
-<a th:href="@{/player/{id}/edit(id=${player.getId()})}">Edit</a>
+<a th:href="@{/player/{id}/edit(id=${player.getId()})}">EDIT</a>
 
 <form th:method="DELETE" th:action="@{/player/{id}(id=${player.getId()})}">
-    <input type="submit" value="Delete"/>
+    <input type="submit" value="Delete!"/>
 </form>
 </body>
 </html>

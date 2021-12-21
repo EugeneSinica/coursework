@@ -64,11 +64,13 @@ public class PlayerDaoImpl implements PlayerDao {
     @Transactional
     public void update (Long id, Player player) {
         Session session = factory.getCurrentSession();
-        Player personToBeUpdated = session.get(Player.class, id);
-
-        personToBeUpdated.setFirstName(player.getFirstName());
-        personToBeUpdated.setAge(player.getAge());
-        personToBeUpdated.setEmail(player.getEmail());
+        Player playerToUpdate = session.get(Player.class, id);
+        playerToUpdate.setFirstName(player.getFirstName());
+        playerToUpdate.setSecondName(player.getSecondName());
+        playerToUpdate.setDateOfBirth(player.getDateOfBirth());
+        playerToUpdate.setStatus(player.getStatus());
+        playerToUpdate.setHealthStatus(player.getHealthStatus());
+        playerToUpdate.setSalary(player.getSalary());
     }
 
     @Transactional
