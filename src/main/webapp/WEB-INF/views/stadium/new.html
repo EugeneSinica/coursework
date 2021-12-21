@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New stadium</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/stadium}" th:object="${stadium}">
+    <label for="capacity">Enter capacity: </label>
+    <input type="number" th:field="*{capacity}" id="capacity"/>
+    <div style="color:red" th:if="${#fields.hasErrors('capacity')}" th:errors="*{capacity}">capacity Error</div>
+    <br/>
+    <label for="priceForTicket">Enter price: </label>
+    <input type="number" th:field="*{priceForTicket}" id="priceForTicket"/>
+    <div style="color:red" th:if="${#fields.hasErrors('priceForTicket')}" th:errors="*{priceForTicket}">priceForTicket Error</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

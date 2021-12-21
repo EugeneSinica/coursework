@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New game</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/game}" th:object="${game}">
+    <label for="dateOfGame">Enter date of game (dd-MM-yyyy): </label>
+    <input type="text" th:field="*{dateOfGame}" id="dateOfGame"/>
+    <div style="color:red" th:if="${#fields.hasErrors('dateOfGame')}" th:errors="*{dateOfGame}">Date Error</div>
+    <br/>
+    <label for="stadiumId">Enter stadiumId: </label>
+    <input type="number" th:field="*{stadiumId}" id="stadiumId"/>
+    <div style="color:red" th:if="${#fields.hasErrors('stadiumId')}" th:errors="*{stadiumId}">stadiumId Error</div>
+    <br/>
+    <label for="viewersCount">Enter viewersCount: </label>
+    <input type="number" th:field="*{viewersCount}" id="viewersCount"/>
+    <div style="color:red" th:if="${#fields.hasErrors('viewersCount')}" th:errors="*{viewersCount}">viewersCount Error</div>
+    <br/>
+    <label for="result">Enter result (Won|Lost|Draw|NotHold): </label>
+    <input type="text" th:field="*{result}" id="result"/>
+    <div style="color:red" th:if="${#fields.hasErrors('result')}" th:errors="*{result}">result Error</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>

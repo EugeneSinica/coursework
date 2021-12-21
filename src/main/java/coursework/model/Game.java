@@ -1,23 +1,74 @@
 package coursework.model;
 
 import coursework.model.enums.Result;
+import coursework.validation.EnumNamePattern;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import java.time.LocalDate;
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "Games")
 public class Game {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-  @ManyToOne private Player player;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "dateOfGame")
+    private LocalDate dateOfGame;
 
-  private LocalDate dateOfGame;
+    private Long stadiumId;
 
-  @ManyToOne private Stadium stadium;
+    @Min(value = 0, message = "Salary should be greater than 0")
+    @Column(name = "viewersCount")
+    private int viewersCount;
 
-  private int viewersCount;
+    @EnumNamePattern(regexp = "Won|Lost|Draw|NotHold", message = "Must be Won|Lost|Draw|NotHold")
+    @Column(name = "result")
+    private Result result;
 
-  private Result result;
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public LocalDate getDateOfGame() {
+        return dateOfGame;
+    }
+
+    public void setDateOfGame(LocalDate dateOfGame) {
+        this.dateOfGame = dateOfGame;
+    }
+
+    public Long getStadiumId() {
+        return stadiumId;
+    }
+
+    public void setStadiumId(Long stadiumId) {
+        this.stadiumId = stadiumId;
+    }
+
+    public int getViewersCount() {
+        return viewersCount;
+    }
+
+    public void setViewersCount(int viewersCount) {
+        this.viewersCount = viewersCount;
+    }
+
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
+    }
 }

@@ -31,6 +31,10 @@
     <input type="number" th:field="*{salary}" id="salary"/>
     <div style="color:red" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}">Salary Error</div>
     <br/>
+    <label for="teamId">Enter team id: </label>
+    <input type="number" th:field="*{teamId}" id="teamId"/>
+    <div style="color:red" th:if="${#fields.hasErrors('teamId')}" th:errors="*{teamId}">Team Error</div>
+    <br/>
     <input type="submit" value="Create!"/>
 </form>
 

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<h4>id: </h4>
+<p th:text="${game.getId()}">VALUE</p>
+<h4>date of game: </h4>
+<p th:text="${game.getDateOfGame()}">VALUE</p>
+<h4>stadium id: </h4>
+<p th:text="${game.getStadiumId()}">VALUE</p>
+<h4>viewers: </h4>
+<p th:text="${game.getViewersCount()}">VALUE</p>
+<h4>result: </h4>
+<p th:text="${game.getResult()()}">VALUE</p>
+
+<a th:href="@{/game/{id}/edit(id=${game.getId()})}">EDIT</a>
+
+<form th:method="DELETE" th:action="@{/game/{id}(id=${game.getId()})}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>
