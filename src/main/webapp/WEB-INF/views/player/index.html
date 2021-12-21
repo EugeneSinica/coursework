@@ -8,7 +8,12 @@
 
 <div th:each="player : ${player}">
     <a th:href="@{/player/{id}(id=${player.getId()})}"
-       th:text="${player.getName() + ', ' + player.getAge()}">user</a>
+       th:text="${player.getFirstName()}">name
+       th:text="${player.getSecondName()}">surname
+       th:text="${player.getDateOfBirth()}">date
+       th:text="${player.getStatus()}">status
+       th:text="${player.getHealthStatus()}">health
+       th:text="${player.getSalary()}">salary</a>
 </div>
 
 <br/>
