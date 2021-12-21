@@ -19,6 +19,8 @@
 <p th:text="${player.getHealthStatus()}">VALUE</p>
 <h4>salary: </h4>
 <p th:text="${player.getSalary()}">VALUE</p>
+<h4>team id: </h4>
+<p th:text="${player.getTeamId()}">VALUE</p>
 
 <a th:href="@{/player/{id}/edit(id=${player.getId()})}">EDIT</a>
 

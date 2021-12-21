@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Show</title>
+</head>
+<body>
+<h4>id: </h4>
+<p th:text="${stadium.getId()}">VALUE</p>
+<h4>capacity: </h4>
+<p th:text="${stadium.getCapacity()}">VALUE</p>
+<h4>price for ticket: </h4>
+<p th:text="${stadium.getPriceForTicket()}">VALUE</p>
+<h4>games: </h4>
+<p th:text="${stadium.getGames()}">VALUE</p>
+
+<a th:href="@{/stadium/{id}/edit(id=${stadium.getId()})}">EDIT</a>
+
+<form th:method="DELETE" th:action="@{/stadium/{id}(id=${stadium.getId()})}">
+    <input type="submit" value="Delete!"/>
+</form>
+</body>
+</html>

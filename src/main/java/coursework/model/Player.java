@@ -50,6 +50,8 @@ public class Player {
     @Column(name = "salary")
     private BigDecimal salary;
 
+    private Long teamId;
+
     public Player() {
 
     }
@@ -108,5 +110,13 @@ public class Player {
 
     public void setSalary(BigDecimal salary) {
         this.salary = salary;
+    }
+
+    public Long getTeamId() {
+        return teamId;
+    }
+
+    public void setTeamId(Long teamId) {
+        this.teamId = teamId;
     }
 }

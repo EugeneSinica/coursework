@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<div th:each="game : ${game}">
+    <a th:href="@{/game/{id}(id=${game.getId()})}"
+       th:text="${game.getDateOfGame()}">date
+       th:text="${game.getStadiumId()}">surname
+       th:text="${game.getViewersCount()}">date
+       th:text="${game.getResult()}">status</a>
+</div>
+
+<br/>
+<hr/>
+
+<a href="/game/new">Create new game</a>
+
+</body>
+</html>
