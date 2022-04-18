@@ -16,7 +16,7 @@ public class Stadium {
   private int capacity;
 
   @Min(value = 0, message = "Salary should be greater than 0")
-  @Column(name = "priceForTicket")
+  @Column(name = "piceForTicket")
   private BigDecimal priceForTicket;
 
   @OneToMany private List<Game> games;
